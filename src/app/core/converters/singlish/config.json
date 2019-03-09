@@ -1,0 +1,418 @@
+{
+    "variables": {
+        "consonant": [
+            "ක",
+            "ග",
+            "ඟ",
+            "ච",
+            "ජ",
+            "ට",
+            "ඩ",
+            "ණ",
+            "ඬ",
+            "ත",
+            "ද",
+            "ඳ",
+            "ප",
+            "බ",
+            "ම",
+            "ඹ",
+            "ය",
+            "ර",
+            "ල",
+            "ළ",
+            "ව",
+            "ස",
+            "හ",
+            "ඛ",
+            "ඝ",
+            "ඞ",
+            "ඡ",
+            "ඣ",
+            "ඤ",
+            "ඨ",
+            "ඪ",
+            "ථ",
+            "ධ",
+            "න",
+            "ඵ",
+            "භ",
+            "ශ",
+            "ෂ",
+            "ෆ"
+        ]
+    },
+    "mapping": {
+        "a": {
+            "char": "අ",
+            "rules": [
+                {
+                    "match": "අ",
+                    "result": "ආ",
+                    "remove": 1
+                },
+                {
+                    "match": "ඇ",
+                    "result": "ඈ",
+                    "remove": 1
+                },
+                {
+                    "match": "එ",
+                    "result": "ඒ",
+                    "remove": 1
+                },
+
+                {
+                    "match": "්",
+                    "result": "",
+                    "remove": 1
+                },
+                {
+                    "match": "<%consonant%>",
+                    "result": "ා",
+                    "remove": 0
+                },
+                {
+                    "match": "ැ",
+                    "result": "ෑ",
+                    "remove": 1
+                },
+                {
+                    "match": "ෙ",
+                    "result": "ේ",
+                    "remove": 1
+                },
+                {
+                    "match": "ො",
+                    "result": "ෝ",
+                    "remove": 1
+                }
+            ]
+        },
+        "A": {
+            "char": "ඇ",
+            "rules": [
+                {
+                    "match": "්",
+                    "result": "ැ",
+                    "remove": 1
+                }
+            ]
+        },
+        "e": {
+            "char": "එ",
+            "rules": [
+                {
+                    "match": "අ",
+                    "result": "ඈ",
+                    "remove": 1
+                },
+                {
+                    "match": "ඉ",
+                    "result": "ඊ",
+                    "remove": 1
+                },
+                {
+                    "match": "ඔ",
+                    "result": "ඕ",
+                    "remove": 1
+                },
+
+                {
+                    "match": "්",
+                    "result": "ෙ",
+                    "remove": 1
+                }
+            ]
+        },
+        "i": {
+            "char": "ඉ",
+            "rules": [
+                {
+                    "match": "ඉ",
+                    "result": "ඊ",
+                    "remove": 1
+                },
+                {
+                    "match": "්",
+                    "result": "ි",
+                    "remove": 1
+                },
+                {
+                    "match": "ි",
+                    "result": "ී",
+                    "remove": 1
+                }
+            ]
+        },
+        "I": {
+            "char": "I",
+            "rules": [
+            ]
+        },
+        "u": {
+            "char": "උ",
+            "rules": [
+                {
+                    "match": "උ",
+                    "result": "ඌ",
+                    "remove": 1
+                },
+                {
+                    "match": "අ",
+                    "result": "ඖ",
+                    "remove": 1
+                },
+                {
+                    "match": "්",
+                    "result": "ු",
+                    "remove": 1
+                },
+                {
+                    "match": "ු",
+                    "result": "ූ",
+                    "remove": 1
+                },
+                {
+                    "match": "්\u200Dර",
+                    "result": "ෘ",
+                    "remove": 3
+                },
+                {
+                    "match": "ෘ",
+                    "result": "ෲ",
+                    "remove": 1
+                },
+                {
+                    "match": "<%consonant%>",
+                    "result": "ෞ",
+                    "remove": 0
+                }
+            ]
+        },
+        "U": {
+            "char": "U",
+            "rules": [
+                {
+                    "match": "්",
+                    "result": "ෞ",
+                    "remove": 1
+                }
+            ]
+        },
+        "o": {
+            "char": "ඔ",
+            "rules": [
+                {
+                    "match": "්",
+                    "result": "ො",
+                    "remove": 1
+                }
+            ]
+        },
+        "k": {
+            "char": "ක්"
+        },
+        "K": {
+            "char": "ඛ්"
+        },
+        "h": {
+            "char": "හ්",
+            "rules": [
+                {
+                    "match": "ක්",
+                    "result": "ඛ්",
+                    "remove": 2
+                },
+                {
+                    "match": "ග්",
+                    "result": "ඝ්",
+                    "remove": 2
+                },
+                {
+                    "match": "c",
+                    "result": "ච්",
+                    "remove": 1
+                },
+                {
+                    "match": "C",
+                    "result": "ඡ්",
+                    "remove": 1
+                },
+                {
+                    "match": "ට්",
+                    "result": "ත්",
+                    "remove": 2
+                },
+                {
+                    "match": "ඨ්",
+                    "result": "ථ්",
+                    "remove": 2
+                },
+                {
+                    "match": "ඩ්",
+                    "result": "ද්",
+                    "remove": 2
+                },
+                {
+                    "match": "ඪ්",
+                    "result": "ධ්",
+                    "remove": 2
+                },
+                {
+                    "match": "ඬ්",
+                    "result": "ඳ්",
+                    "remove": 2
+                },
+                {
+                    "match": "ප්",
+                    "result": "ඵ්",
+                    "remove": 2
+                },
+                {
+                    "match": "බ්",
+                    "result": "භ්",
+                    "remove": 2
+                },
+                {
+                    "match": "ස්",
+                    "result": "ශ්",
+                    "remove": 2
+                },
+                {
+                    "match": "S",
+                    "result": "ෂ්",
+                    "remove": 1
+                }
+            ]
+        },
+        "g": {
+            "char": "ග්"
+        },
+        "G": {
+            "char": "ඝ්"
+        },
+        "j": {
+            "char": "ජ්"
+        },
+        "J": {
+            "char": "ඣ්"
+        },
+        "N": {
+            "char": "ණ්",
+            "rules": [
+                {
+                    "match": "ඛ්",
+                    "result": "ඤ්",
+                    "remove": 2
+                }
+            ]
+        },
+        "t": {
+            "char": "ට්"
+        },
+        "T": {
+            "char": "ඨ්"
+        },
+        "d": {
+            "char": "ඩ්"
+        },
+        "D": {
+            "char": "ඪ්"
+        },
+        "n": {
+            "char": "න්"
+        },
+        "p": {
+            "char": "ප්"
+        },
+        "P": {
+            "char": "ඵ්"
+        },
+        "b": {
+            "char": "බ්"
+        },
+        "B": {
+            "char": "ඹ්"
+        },
+        "m": {
+            "char": "ම්"
+        },
+        "y": {
+            "char": "ය්"
+        },
+        "Y": {
+            "char": "Y",
+            "rules": [
+                {
+                    "match": "්",
+                    "result": "්\u200Dය්",
+                    "remove": 1
+                }
+            ]
+        },
+        "r": {
+            "char": "ර්",
+            "rules": [
+                {
+                    "match": "්",
+                    "result": "්\u200Dර",
+                    "remove": 1
+                },
+                {
+                    "match": "<%consonant%>",
+                    "result": "්\u200Dර",
+                    "remove": 0
+                }
+            ]
+        },
+        "l": {
+            "char": "ල්"
+        },
+        "w": {
+            "char": "ව්"
+        },
+        "v": {
+            "char": "ව්"
+        },
+        "L": {
+            "char": "ළ්"
+        },
+        "s": {
+            "char": "ස්"
+        },
+        "f": {
+            "char": "ෆ්"
+        },
+        "x": {
+            "char": "අං",
+            "rules": [
+                {
+                    "match": "්",
+                    "result": "ං",
+                    "remove": 1
+                },
+                {
+                    "match": "<%consonant%>",
+                    "result": "ං",
+                    "remove": 0
+                }
+            ]
+        },
+        "X": {
+            "char": "අඃ",
+            "rules": [
+                {
+                    "match": "්",
+                    "result": "ඃ",
+                    "remove": 1
+                },
+                {
+                    "match": "<%consonant%>",
+                    "result": "ඃ",
+                    "remove": 0
+                }
+            ]
+        }
+    }
+}
