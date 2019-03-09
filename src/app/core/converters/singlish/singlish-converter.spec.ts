@@ -5,7 +5,7 @@ describe('Singlish Converter', () => {
     const converter: Converter = (new SinglishConverterBuilder()).get();
 
     describe('Vowels check', () => {
-        it('Generate vowels correctly', () => {
+        it('[RUNTIME]: Generate vowels correctly', () => {
             expect('අ').toEqual(converter.convert('a').result);
             expect('ආ').toEqual(converter.convert('a', 'අ').result);
             expect('ඇ').toEqual(converter.convert('A').result);
@@ -29,7 +29,7 @@ describe('Singlish Converter', () => {
             expect('ඖ').toEqual(converter.convert('u', 'අ').result);
         });
 
-        it('Vowel Remove value is configured correctly', () => {
+        it('[CONFIG]: Vowels Remove value is configured correctly', () => {
             expect(0).toEqual(converter.convert('a').remove);
             expect(1).toEqual(converter.convert('a', 'අ').remove);
             expect(0).toEqual(converter.convert('A').remove);
@@ -55,7 +55,7 @@ describe('Singlish Converter', () => {
     });
 
     describe('Consonants check', () => {
-        it('Generate hall consonants correctly', () => {
+        it('[RUNTIME]: Generate hall consonants correctly', () => {
             // #1
             expect('ක්').toEqual(converter.convert('k').result);
             expect('ඛ්').toEqual(converter.convert('K').result);
@@ -117,7 +117,7 @@ describe('Singlish Converter', () => {
             expect('ෆ්').toEqual(converter.convert('f').result);
         });
 
-        it('Consonant remove value is configured correctly', () => {
+        it('[CONFIG]: Consonant remove value is configured correctly', () => {
             // #1
             expect(0).toEqual(converter.convert('k').remove);
             expect(0).toEqual(converter.convert('K').remove);
@@ -181,7 +181,7 @@ describe('Singlish Converter', () => {
     });
 
     describe('Consonants modifier check', () => {
-        it('Generate Vowel diacritics with consonant', () => {
+        it('[RUNTIME + CONFIG]: Generate Vowel diacritics with consonant', () => {
             expect('').toEqual(converter.convert('a', 'ක්').result);
             expect(1).toEqual(converter.convert('a', 'ක්').remove);
 
