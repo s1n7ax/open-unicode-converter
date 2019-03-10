@@ -1,3 +1,9 @@
-<p>
-    header works!
-</p>
+<mat-toolbar>
+    <span>{{title}}</span>
+
+    <span class="fill-remaining-gap"></span>
+
+    <div class="converter-switch-container">
+        <mat-slide-toggle [(ngModel)]="converterIsOn">{{ converterIsOn ? 'On' : 'Off' }}</mat-slide-toggle>
+    </div>
+</mat-toolbar>
