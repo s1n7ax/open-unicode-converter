@@ -29,13 +29,9 @@
                         "styles": [
                             "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
                             "src/styles.scss",
-                            "src/assets/styles/quill/quill.core.css",
-                            "src/assets/styles/quill/quill.bubble.css",
                             "src/assets/styles/quill/quill.snow.css"
                         ],
                         "scripts": [
-                            "src/assets/scripts/quill/quill.core.js",
-                            "src/assets/scripts/quill/quill.js"
                         ],
                         "es5BrowserSupport": true
                     },
@@ -93,11 +89,10 @@
                         "styles": [
                             "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
                             "src/styles.scss",
-                            "src/assets/styles/quill/quill.core.css",
-                            "src/assets/styles/quill/quill.bubble.css",
                             "src/assets/styles/quill/quill.snow.css"
                         ],
-                        "scripts": [],
+                        "scripts": [
+                        ],
                         "assets": [
                             "src/favicon.ico",
                             "src/assets"
