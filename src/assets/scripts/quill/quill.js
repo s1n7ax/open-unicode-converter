@@ -401,11 +401,11 @@
                     if (equal(newOp.attributes, lastOp.attributes)) {
                         if (typeof newOp.insert === 'string' && typeof lastOp.insert === 'string') {
                             this.ops[index - 1] = {insert: lastOp.insert + newOp.insert};
-                            if (typeof newOp.attributes === 'object') this.ops[index - 1].attributes = newOp.attributes;
+                            if (typeof newOp.attributes === 'object') this.ops[index - 1].attributes = newOp.attributes
                             return this;
                         } else if (typeof newOp.retain === 'number' && typeof lastOp.retain === 'number') {
                             this.ops[index - 1] = {retain: lastOp.retain + newOp.retain};
-                            if (typeof newOp.attributes === 'object') this.ops[index - 1].attributes = newOp.attributes;
+                            if (typeof newOp.attributes === 'object') this.ops[index - 1].attributes = newOp.attributes
                             return this;
                         }
                     }
@@ -626,7 +626,7 @@
                         var otherOp = otherIter.next(length);
                         if (thisOp['delete']) {
                             // Our delete either makes their delete redundant or removes their retain
-
+                            continue;
                         } else if (otherOp['delete']) {
                             delta.push(otherOp);
                         } else {
@@ -1309,7 +1309,7 @@
                             return _this2.editor.update(null, mutations, index);
                         }, source);
                     });
-                    var contents = this.clipboard.convert('<div class=\'ql-editor\' styles="white-space: normal;">' + html + '<p><br></p></div>');
+                    var contents = this.clipboard.convert('<div class=\'ql-editor\' style="white-space: normal;">' + html + '<p><br></p></div>');
                     this.setContents(contents);
                     this.history.clear();
                     if (this.options.placeholder) {
@@ -2370,7 +2370,7 @@
                 } else {
                     return objEquiv(actual, expected, opts);
                 }
-            };
+            }
 
             function isUndefinedOrNull(value) {
                 return value === null || value === undefined;
@@ -3984,9 +3984,9 @@
                                 _this.insertBefore(child, _this.children.head || undefined);
                             } catch (err) {
                                 if (err instanceof Registry.ParchmentError)
-
+                                    return;
                                 else
-                                throw err;
+                                    throw err;
                             }
                         });
                 };
@@ -4431,7 +4431,7 @@
                 this.ops = ops;
                 this.index = 0;
                 this.offset = 0;
-            }
+            };
 
             Iterator.prototype.hasNext = function () {
                 return this.peekLength() < Infinity;
@@ -4442,7 +4442,7 @@
                 var nextOp = this.ops[this.index];
                 if (nextOp) {
                     var offset = this.offset;
-                    var opLength = lib.length(nextOp);
+                    var opLength = lib.length(nextOp)
                     if (length >= opLength - offset) {
                         length = opLength - offset;
                         this.index += 1;
@@ -8737,7 +8737,6 @@
             Object.defineProperty(exports, "__esModule", {value: true});
             var format_1 = __webpack_require__(18);
             var Registry = __webpack_require__(1);
-
 // Shallow object comparison
             function isEqual(obj1, obj2) {
                 if (Object.keys(obj1).length !== Object.keys(obj2).length)
@@ -8848,7 +8847,7 @@
                 };
                 BlockBlot.prototype.format = function (name, value) {
                     if (Registry.query(name, Registry.Scope.BLOCK) == null) {
-
+                        return;
                     } else if (name === this.statics.blotName && !value) {
                         this.replaceWith(BlockBlot.blotName);
                     } else {
@@ -9224,7 +9223,8 @@
                 }
                 diffs = fix_emoji(diffs);
                 return diffs;
-            }
+            };
+
 
             /**
              * Find the differences between two texts.  Assumes that the texts do not
@@ -9284,7 +9284,8 @@
                 }
 
                 return diff_bisect_(text1, text2);
-            }
+            };
+
 
             /**
              * Find the 'middle snake' of a diff, split the problem in two
@@ -9399,7 +9400,8 @@
                 // Diff took too long and hit the deadline or
                 // number of diffs equals number of characters, no commonality at all.
                 return [[DIFF_DELETE, text1], [DIFF_INSERT, text2]];
-            }
+            };
+
 
             /**
              * Given the location of the 'middle snake', split the diff in two parts
@@ -9421,7 +9423,8 @@
                 var diffsb = diff_main(text1b, text2b);
 
                 return diffs.concat(diffsb);
-            }
+            };
+
 
             /**
              * Determine the common prefix of two strings.
@@ -9452,7 +9455,8 @@
                     pointermid = Math.floor((pointermax - pointermin) / 2 + pointermin);
                 }
                 return pointermid;
-            }
+            };
+
 
             /**
              * Determine the common suffix of two strings.
@@ -9483,7 +9487,8 @@
                     pointermid = Math.floor((pointermax - pointermin) / 2 + pointermin);
                 }
                 return pointermid;
-            }
+            };
+
 
             /**
              * Do the two texts share a substring which is at least half the length of the
@@ -9575,7 +9580,8 @@
                 }
                 var mid_common = hm[4];
                 return [text1_a, text1_b, text2_a, text2_b, mid_common];
-            }
+            };
+
 
             /**
              * Reorder and merge like edit sections.  Merge equalities.
@@ -9701,7 +9707,8 @@
                 if (changes) {
                     diff_cleanupMerge(diffs);
                 }
-            }
+            };
+
 
             var diff = diff_main;
             diff.INSERT = DIFF_INSERT;
@@ -9786,7 +9793,7 @@
                     if (d_next != null && d[1] + d_next[1] === d_next[1] + d[1]) {
                         // Case 1)
                         // It is possible to perform a naive shift
-                        ndiffs.splice(cursor_pointer, 2, d_next, d);
+                        ndiffs.splice(cursor_pointer, 2, d_next, d)
                         return merge_tuples(ndiffs, cursor_pointer, 2)
                     } else if (d_next != null && d_next[1].indexOf(d[1]) === 0) {
                         // Case 2)
@@ -9818,10 +9825,10 @@
                 var compact = false;
                 var starts_with_pair_end = function (str) {
                     return str.charCodeAt(0) >= 0xDC00 && str.charCodeAt(0) <= 0xDFFF;
-                };
+                }
                 var ends_with_pair_start = function (str) {
                     return str.charCodeAt(str.length - 1) >= 0xD800 && str.charCodeAt(str.length - 1) <= 0xDBFF;
-                };
+                }
                 for (var i = 2; i < diffs.length; i += 1) {
                     if (diffs[i - 2][0] === DIFF_EQUAL && ends_with_pair_start(diffs[i - 2][1]) &&
                         diffs[i - 1][0] === DIFF_DELETE && starts_with_pair_end(diffs[i - 1][1]) &&
@@ -9902,7 +9909,7 @@
 
             function supported(object) {
                 return Object.prototype.toString.call(object) == '[object Arguments]';
-            }
+            };
 
             exports.unsupported = unsupported;
 
@@ -9913,7 +9920,8 @@
                     Object.prototype.hasOwnProperty.call(object, 'callee') &&
                     !Object.prototype.propertyIsEnumerable.call(object, 'callee') ||
                     false;
-            }
+            };
+
 
             /***/
         }),
@@ -10738,7 +10746,7 @@
                     return delta;
                 }
                 if (!computeStyle(node.parentNode).whiteSpace.startsWith('pre')) {
-                    // eslint-disable-next-line func-styles
+                    // eslint-disable-next-line func-style
                     var replacer = function replacer(collapse, match) {
                         match = match.replace(/[^\u00a0]/g, ''); // \u00a0 is nbsp;
                         return match.length < 1 && collapse ? ' ' : match;
