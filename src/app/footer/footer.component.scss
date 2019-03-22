@@ -1,0 +1,61 @@
+mat-toolbar {
+  height: 3rem;
+  display: flex;
+  justify-content: flex-end;
+  padding-left: 5rem;
+  padding-right: 5rem;
+}
+
+
+a {
+  padding-left: 0.2rem;
+  padding-right: 0.2rem;
+}
+
+.fab {
+  padding: 0.6rem;
+  font-size: 1rem;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+  border-radius: 50%;
+}
+
+.fab:hover {
+  opacity: 0.7;
+}
+
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+}
+
+.fa-linkedin {
+  background: #007bb5;
+  color: white;
+}
+
+.fa-youtube {
+  background: #bb0000;
+  color: white;
+}
+
+.fa-instagram {
+  background: #125688;
+  color: white;
+}
+
+.fa-github {
+  background: #25292C;
+  color: white;
+}
+
+.fa-gitlab {
+  background: #291C48;
+  color: #E1422D;
+}
