@@ -8,12 +8,14 @@ import {MaterialModule} from './material/material.module';
 import {HeaderComponent} from './header/header.component';
 import {FormsModule} from '@angular/forms';
 import {EditorComponent} from './editor/editor.component';
+import {FooterComponent} from './footer/footer.component';
 
 @NgModule({
     declarations: [
         AppComponent,
         HeaderComponent,
-        EditorComponent
+        EditorComponent,
+        FooterComponent
     ],
     imports: [
         BrowserModule,
