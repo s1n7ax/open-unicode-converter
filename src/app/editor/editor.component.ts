@@ -15,7 +15,7 @@ export class EditorComponent implements OnInit, Editor {
     }
 
     ngOnInit() {
-        const editorEle = this.elRef.nativeElement.firstChild as HTMLElement;
+        const editorEle = this.elRef.nativeElement.querySelector('#editor');
 
         this.editor = new Quill(editorEle, {
             modules: {
