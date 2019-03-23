@@ -11,7 +11,7 @@ import {EditorComponent} from './editor/editor.component';
 })
 export class AppComponent implements OnInit {
     @ViewChild(EditorComponent) editorComponent: EditorComponent;
-    private converting: boolean;
+    public converting: boolean;
     private converter: Converter;
 
     constructor(private editorService: EditorService) {
