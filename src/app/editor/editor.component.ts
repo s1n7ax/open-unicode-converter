@@ -1,6 +1,7 @@
-import {Component, ElementRef, OnInit} from '@angular/core';
-import Quill, {TextChangeHandler} from 'quill';
+import {Component, ElementRef, HostListener, OnInit} from '@angular/core';
+import Quill from 'quill';
 import Editor from './editor';
+import {EditorService} from './editor.service';
 
 @Component({
     selector: 'app-editor',
@@ -11,7 +12,7 @@ export class EditorComponent implements OnInit, Editor {
     private editor: Quill;
 
 
-    constructor(private elRef: ElementRef) {
+    constructor(private elRef: ElementRef, private editorService: EditorService) {
     }
 
     ngOnInit() {
@@ -51,13 +52,13 @@ export class EditorComponent implements OnInit, Editor {
 
     type(char: string): void {
         const selection = this.editor.getSelection(true);
-        const text = this.editor.getText();
 
         this.editor.deleteText(selection.index, selection.length);
         this.editor.insertText(selection.index, char);
     }
 
-    onTextChange(callback: TextChangeHandler) {
-        this.editor.on('text-change', callback);
+    @HostListener('keypress', ['$event'])
+    onKeyPress(event: KeyboardEvent) {
+        this.editorService.onKeyPress.emit(event);
     }
 }

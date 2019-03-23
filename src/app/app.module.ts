@@ -9,6 +9,7 @@ import {HeaderComponent} from './header/header.component';
 import {FormsModule} from '@angular/forms';
 import {EditorComponent} from './editor/editor.component';
 import {FooterComponent} from './footer/footer.component';
+import {EditorService} from './editor/editor.service';
 
 @NgModule({
     declarations: [
@@ -24,7 +25,7 @@ import {FooterComponent} from './footer/footer.component';
         BrowserAnimationsModule,
         MaterialModule
     ],
-    providers: [],
+    providers: [EditorService],
     bootstrap: [AppComponent]
 })
 export class AppModule {

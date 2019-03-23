@@ -4,6 +4,8 @@
     <span class="fill-remaining-gap"></span>
 
     <div class="converter-switch-container">
-        <mat-slide-toggle [(ngModel)]="converterIsOn">{{ converterIsOn ? 'On' : 'Off' }}</mat-slide-toggle>
+        <mat-slide-toggle (ngModelChange)="switched.emit(converting)" [(ngModel)]="converting">
+            {{ converting ? 'On' : 'Off' }}
+        </mat-slide-toggle>
     </div>
 </mat-toolbar>

@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 
 @Component({
     selector: 'app-header',
@@ -7,7 +7,8 @@ import {Component, OnInit} from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
     title: string;
-    converterIsOn: boolean;
+    @Input() converting: boolean;
+    @Output() switched = new EventEmitter<boolean>();
 
     constructor() {
         this.title = 'Sinhala Unicode Converter';
@@ -15,5 +16,4 @@ export class HeaderComponent implements OnInit {
 
     ngOnInit() {
     }
-
 }
