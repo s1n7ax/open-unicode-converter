@@ -242,10 +242,10 @@ describe('Singlish Converter', () => {
             expect('ඃ').toEqual(converter.convert('X', 'ක').result);
             expect(0).toEqual(converter.convert('X', 'ක').remove);
 
-            expect('්‍ර').toEqual(converter.convert('r', 'ක්').result);
+            expect('්‍ර්').toEqual(converter.convert('r', 'ක්').result);
             expect(1).toEqual(converter.convert('r', 'ක්').remove);
 
-            expect('්‍ර').toEqual(converter.convert('r', 'ක').result);
+            expect('ර්').toEqual(converter.convert('r', 'ක').result);
             expect(0).toEqual(converter.convert('r', 'ක').remove);
 
             expect('්‍ය්').toEqual(converter.convert('Y', 'ක්').result);

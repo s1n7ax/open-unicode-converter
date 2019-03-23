@@ -355,13 +355,8 @@
             "rules": [
                 {
                     "match": "්",
-                    "result": "්\u200Dර",
+                    "result": "්\u200Dර්",
                     "remove": 1
-                },
-                {
-                    "match": "<%consonant%>",
-                    "result": "්\u200Dර",
-                    "remove": 0
                 }
             ]
         },
