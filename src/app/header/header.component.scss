@@ -1,18 +1,22 @@
 mat-toolbar {
-  padding-left: 5rem;
-  padding-right: 5rem;
+  display: flex;
+  align-items: center;
+
+  padding-left: 70px;
+  padding-right: 70px;
   font-family: 'Questrial', sans-serif;
-  user-select: none;
 }
 
-mat-toolbar > span {
-  font-size: 2rem;
+#title {
+  padding-left: 10px;
+  padding-right: 10px;
+  user-select: none;
 }
 
 .fill-remaining-gap {
   flex: 1 1 auto
 }
 
-.converter-switch-container {
-  width: 5rem;
+#converter-switch-container {
+  width: 80px;
 }

@@ -1,9 +1,10 @@
 <mat-toolbar>
-    <span>{{title}}</span>
+    <img alt="logo" src="assets/img/logo.ico">
+    <span id="title">{{title}}</span>
 
     <span class="fill-remaining-gap"></span>
 
-    <div class="converter-switch-container">
+    <div id="converter-switch-container">
         <mat-slide-toggle (ngModelChange)="switched.emit(converting)" [(ngModel)]="converting">
             {{ converting ? 'On' : 'Off' }}
         </mat-slide-toggle>

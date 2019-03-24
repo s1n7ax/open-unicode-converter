@@ -1,61 +1,64 @@
 mat-toolbar {
-  height: 3rem;
   display: flex;
-  justify-content: flex-end;
-  padding-left: 5rem;
-  padding-right: 5rem;
-}
+  justify-content: flex-start;
+  align-items: center;
 
-
-a {
-  padding-left: 0.2rem;
-  padding-right: 0.2rem;
+  height: 50px;
+  padding-left: 70px;
+  padding-right: 70px;
 }
 
 .fab {
-  padding: 0.6rem;
-  font-size: 1rem;
+  height: 15px;
+  width: 15px;
+  padding: 10px;
+  font-size: 16px;
   text-align: center;
   text-decoration: none;
-  margin: 5px 2px;
+  margin: 5px 5px;
   border-radius: 50%;
+  background: rgba(36, 38, 37, 0.95);
 }
 
-.fab:hover {
+.fab {
   opacity: 0.7;
-}
-
-.fa-facebook {
-  background: #3B5998;
   color: white;
 }
 
-.fa-twitter {
+.fab:hover {
+  opacity: 1;
+}
+
+.fa-facebook-f:hover {
+  background: #3B5998;
+}
+
+.fa-twitter:hover {
   background: #55ACEE;
   color: white;
 }
 
-.fa-linkedin {
+.fa-linkedin-in:hover {
   background: #007bb5;
   color: white;
 }
 
-.fa-youtube {
+.fa-youtube:hover {
   background: #bb0000;
   color: white;
 }
 
-.fa-instagram {
+.fa-instagram:hover {
   background: #125688;
   color: white;
 }
 
-.fa-github {
+.fa-github:hover {
   background: #25292C;
   color: white;
 }
 
-.fa-gitlab {
+.fa-gitlab:hover {
   background: #291C48;
   color: #E1422D;
 }
