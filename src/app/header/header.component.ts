@@ -8,7 +8,7 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 export class HeaderComponent implements OnInit {
     title: string;
     @Input() converting: boolean;
-    @Output() switched = new EventEmitter<boolean>();
+    @Output() switchChange = new EventEmitter();
 
     constructor() {
         this.title = 'Sinhala Unicode Converter';
