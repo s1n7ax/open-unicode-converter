@@ -163,6 +163,11 @@
                     "remove": 1
                 },
                 {
+                    "match": "්\u200Dර්",
+                    "result": "ෘ",
+                    "remove": 4
+                },
+                {
                     "match": "්",
                     "result": "ු",
                     "remove": 1
@@ -171,11 +176,6 @@
                     "match": "ු",
                     "result": "ූ",
                     "remove": 1
-                },
-                {
-                    "match": "්\u200Dර",
-                    "result": "ෘ",
-                    "remove": 3
                 },
                 {
                     "match": "ෘ",

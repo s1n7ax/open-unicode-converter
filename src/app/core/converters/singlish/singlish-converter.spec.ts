@@ -206,8 +206,8 @@ describe('Singlish Converter', () => {
             expect('ූ').toEqual(converter.convert('u', 'කු').result);
             expect(1).toEqual(converter.convert('u', 'කු').remove);
 
-            expect('ෘ').toEqual(converter.convert('u', 'ක්‍ර').result);
-            expect(3).toEqual(converter.convert('u', 'ක්‍ර').remove);
+            expect('ෘ').toEqual(converter.convert('u', 'ක්‍ර්').result);
+            expect(4).toEqual(converter.convert('u', 'ක්‍ර්').remove);
 
             expect('ෲ').toEqual(converter.convert('u', 'කෘ').result);
             expect(1).toEqual(converter.convert('u', 'කෘ').remove);
