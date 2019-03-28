@@ -10,13 +10,15 @@ import {FormsModule} from '@angular/forms';
 import {EditorComponent} from './editor/editor.component';
 import {FooterComponent} from './footer/footer.component';
 import {EditorService} from './editor/editor.service';
+import {HelpComponent} from './help/help.component';
 
 @NgModule({
     declarations: [
         AppComponent,
         HeaderComponent,
         EditorComponent,
-        FooterComponent
+        FooterComponent,
+        HelpComponent
     ],
     imports: [
         BrowserModule,
