@@ -5,7 +5,8 @@
     <span class="fill-remaining-gap"></span>
 
     <div id="converter-switch-container">
-        <mat-slide-toggle (ngModelChange)="switchChange.emit($event)" [ngModel]="converting">
+        <mat-slide-toggle (ngModelChange)="switchChange.emit($event)" [ngModel]="converting"
+                          matTooltip="Control + Space">
             {{ converting ? 'On' : 'Off' }}
         </mat-slide-toggle>
     </div>
