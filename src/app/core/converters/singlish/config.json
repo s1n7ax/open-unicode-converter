@@ -147,6 +147,11 @@
         "I": {
             "char": "I",
             "rules": [
+                {
+                    "match": "්",
+                    "result": "ෛ",
+                    "remove": 1
+                }
             ]
         },
         "u": {

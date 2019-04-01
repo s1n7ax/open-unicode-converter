@@ -254,6 +254,8 @@ describe('Singlish Converter', () => {
             expect('').toEqual(converter.convert('a', 'ක්‍ය්').result);
             expect(1).toEqual(converter.convert('a', 'ක්‍ය්').remove);
 
+            expect('ෛ').toEqual(converter.convert('I', '්').result);
+            expect(1).toEqual(converter.convert('I', '්').remove);
             // expect('').toEqual(converter.convert('', '').result);
             // expect('').toEqual(converter.convert('', '').result);
             // expect('').toEqual(converter.convert('', '').result);
