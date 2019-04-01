@@ -7,6 +7,11 @@ mat-toolbar {
   font-family: 'Questrial', sans-serif;
 }
 
+mat-toolbar > div {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
 #title {
   padding-left: 10px;
   padding-right: 10px;

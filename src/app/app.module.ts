@@ -10,7 +10,7 @@ import {FormsModule} from '@angular/forms';
 import {EditorComponent} from './editor/editor.component';
 import {FooterComponent} from './footer/footer.component';
 import {EditorService} from './editor/editor.service';
-import {HelpComponent} from './help/help.component';
+import {HelpComponent, HelpSheetComponent} from './help/help.component';
 
 @NgModule({
     declarations: [
@@ -18,7 +18,8 @@ import {HelpComponent} from './help/help.component';
         HeaderComponent,
         EditorComponent,
         FooterComponent,
-        HelpComponent
+        HelpComponent,
+        HelpSheetComponent
     ],
     imports: [
         BrowserModule,
@@ -27,6 +28,7 @@ import {HelpComponent} from './help/help.component';
         BrowserAnimationsModule,
         MaterialModule
     ],
+    entryComponents: [HelpSheetComponent],
     providers: [EditorService],
     bootstrap: [AppComponent]
 })
