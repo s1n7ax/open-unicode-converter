@@ -121,6 +121,31 @@
                     "match": "්",
                     "result": "ෙ",
                     "remove": 1
+                },
+                {
+                    "match": "ැ",
+                    "result": "ෑ",
+                    "remove": 1
+                },
+                {
+                    "match": "<%consonant%>",
+                    "result": "ෑ",
+                    "remove": 0
+                },
+                {
+                    "match": "ො",
+                    "result": "ෝ",
+                    "remove": 1
+                },
+                {
+                    "match": "ි",
+                    "result": "ී",
+                    "remove": 1
+                },
+                {
+                    "match": "ෙ",
+                    "result": "ී",
+                    "remove": 1
                 }
             ]
         },
@@ -319,7 +344,14 @@
             "char": "ඨ්"
         },
         "d": {
-            "char": "ඩ්"
+            "char": "ඩ්",
+            "rules": [
+                {
+                    "match": "න්න්",
+                    "result": "ඬ්",
+                    "remove": 4
+                }
+            ]
         },
         "D": {
             "char": "ඪ්"

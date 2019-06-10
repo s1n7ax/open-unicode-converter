@@ -80,7 +80,7 @@ describe('Singlish Converter', () => {
             expect('ඪ්').toEqual(converter.convert('D').result);
 
             expect('ණ්').toEqual(converter.convert('N').result);
-            // expect('ඬ්').toEqual(converter.convert('').result);
+            expect('ඬ්').toEqual(converter.convert('d', 'න්න්').result);
 
             expect('ත්').toEqual(converter.convert('h', 'ට්').result);
             expect('ථ්').toEqual(converter.convert('h', 'ඨ්').result);
@@ -142,7 +142,7 @@ describe('Singlish Converter', () => {
             expect(0).toEqual(converter.convert('D').remove);
 
             expect(0).toEqual(converter.convert('N').remove);
-            // expect('ඬ්').toEqual(converter.convert('').remove);
+            expect(4).toEqual(converter.convert('d', 'න්න්').remove);
 
             expect(2).toEqual(converter.convert('h', 'ට්').remove);
             expect(2).toEqual(converter.convert('h', 'ඨ්').remove);
@@ -192,13 +192,19 @@ describe('Singlish Converter', () => {
             expect(1).toEqual(converter.convert('A', 'ක්').remove);
 
             expect('ෑ').toEqual(converter.convert('a', 'කැ').result);
+            expect('ෑ').toEqual(converter.convert('e', 'කැ').result);
+            expect('ෑ').toEqual(converter.convert('e', 'ක').result);
             expect(1).toEqual(converter.convert('a', 'කැ').remove);
+            expect(1).toEqual(converter.convert('e', 'කැ').remove);
+            expect(0).toEqual(converter.convert('e', 'ක').remove);
 
             expect('ි').toEqual(converter.convert('i', 'ක්').result);
             expect(1).toEqual(converter.convert('i', 'ක්').remove);
 
             expect('ී').toEqual(converter.convert('i', 'කි').result);
+            expect('ී').toEqual(converter.convert('e', 'කි').result);
             expect(1).toEqual(converter.convert('i', 'කි').remove);
+            expect(1).toEqual(converter.convert('e', 'කි').remove);
 
             expect('ු').toEqual(converter.convert('u', 'ක්').result);
             expect(1).toEqual(converter.convert('u', 'ක්').remove);
@@ -222,7 +228,9 @@ describe('Singlish Converter', () => {
             expect(1).toEqual(converter.convert('o', 'ක්').remove);
 
             expect('ෝ').toEqual(converter.convert('a', 'කො').result);
+            expect('ෝ').toEqual(converter.convert('e', 'කො').result);
             expect(1).toEqual(converter.convert('a', 'කො').remove);
+            expect(1).toEqual(converter.convert('e', 'කො').remove);
 
             expect('ෞ').toEqual(converter.convert('u', 'ක').result);
             expect(0).toEqual(converter.convert('u', 'ක').remove);
@@ -256,7 +264,6 @@ describe('Singlish Converter', () => {
 
             expect('ෛ').toEqual(converter.convert('I', '්').result);
             expect(1).toEqual(converter.convert('I', '්').remove);
-            // expect('').toEqual(converter.convert('', '').result);
             // expect('').toEqual(converter.convert('', '').result);
             // expect('').toEqual(converter.convert('', '').result);
             // expect('').toEqual(converter.convert('', '').result);
