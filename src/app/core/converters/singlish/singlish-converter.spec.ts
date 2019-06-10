@@ -244,11 +244,17 @@ describe('Singlish Converter', () => {
             expect('ං').toEqual(converter.convert('x', 'ක').result);
             expect(0).toEqual(converter.convert('x', 'ක').remove);
 
+            expect('ං').toEqual(converter.convert('x', 'කෙ').result);
+            expect(0).toEqual(converter.convert('x', 'කෙ').remove);
+
             expect('ඃ').toEqual(converter.convert('X', 'ක්').result);
             expect(1).toEqual(converter.convert('X', 'ක්').remove);
 
             expect('ඃ').toEqual(converter.convert('X', 'ක').result);
             expect(0).toEqual(converter.convert('X', 'ක').remove);
+
+            expect('ඃ').toEqual(converter.convert('X', 'කෙ').result);
+            expect(0).toEqual(converter.convert('X', 'කෙ').remove);
 
             expect('්‍ර්').toEqual(converter.convert('r', 'ක්').result);
             expect(1).toEqual(converter.convert('r', 'ක්').remove);
@@ -264,10 +270,6 @@ describe('Singlish Converter', () => {
 
             expect('ෛ').toEqual(converter.convert('I', '්').result);
             expect(1).toEqual(converter.convert('I', '්').remove);
-            // expect('').toEqual(converter.convert('', '').result);
-            // expect('').toEqual(converter.convert('', '').result);
-            // expect('').toEqual(converter.convert('', '').result);
-            // expect('').toEqual(converter.convert('', '').result);
         });
     });
 });
