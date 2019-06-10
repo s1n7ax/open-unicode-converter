@@ -4,8 +4,8 @@ import Config from '../../models/config';
 import KeyMapData from '../../models/key-map-data';
 
 export default class CommonConverter implements Converter {
-    id = 'singlish';
-    name = 'Sinhala (Singlish)';
+    id = 'common';
+    name = 'common (Common)';
     config: Config;
 
     convert(letter: string, currentWord?: string): Rule {
