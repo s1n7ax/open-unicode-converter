@@ -1,6 +1,16 @@
 # OpenUnicodeConverter
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.4.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.4. Support Angular version 8.0.0
+
+## Install angular-cli
+Make sure global binary path of npm or yarn is included in the `PATH` environment variable
+```
+// using npm
+npm install -g @angular/cli
+
+// using yarn
+yarn global add @angular/cli
+```
 
 ## Development server
 
