@@ -10,7 +10,7 @@ import {EditorComponent} from './editor/editor.component';
     styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-    @ViewChild(EditorComponent) editorComponent: EditorComponent;
+    @ViewChild(EditorComponent, null) editorComponent: EditorComponent;
     public converting: boolean;
     private converter: Converter;
 
