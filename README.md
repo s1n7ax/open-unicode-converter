@@ -1,5 +1,7 @@
 # OpenUnicodeConverter
 
+Try the application here: [https://www.sinhalaunicode.org](https://www.sinhalaunicode.org/)
+
 ![screenshot](https://raw.githubusercontent.com/s1n7ax/open-unicode-converter/master/screenshots/screenshot1.png)
 
 I wanted to create a Unicode converter that is truly free, opensource and most importantly, Configurable. First I went through some of the applications I found on the internet. 
