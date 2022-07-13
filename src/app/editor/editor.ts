@@ -21,4 +21,16 @@ export default interface Editor {
      * return current word that is being written in editor
      */
     getCurrentWord(): string;
+
+    /**
+     * return the entire text in the editor
+     */
+    getText(): string;
+
+    /**
+     * replace the editor text with the given text
+     *
+     * @param text - text to replace the
+     */
+    setText(text: string): void;
 }

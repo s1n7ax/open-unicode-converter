@@ -1,29 +1,30 @@
-import {Component, ElementRef, HostListener, OnInit} from '@angular/core';
-import Quill from 'quill';
-import Editor from './editor';
-import {EditorService} from './editor.service';
+import { Component, ElementRef, HostListener, OnInit } from "@angular/core";
+import Quill from "quill";
+import Editor from "./editor";
+import { EditorService } from "./editor.service";
 
 @Component({
-    selector: 'app-editor',
-    templateUrl: './editor.component.html',
-    styleUrls: ['./editor.component.scss']
+    selector: "app-editor",
+    templateUrl: "./editor.component.html",
+    styleUrls: ["./editor.component.scss"],
 })
 export class EditorComponent implements OnInit, Editor {
     private editor: Quill;
 
-
-    constructor(private elRef: ElementRef, private editorService: EditorService) {
-    }
+    constructor(
+        private elRef: ElementRef,
+        private editorService: EditorService
+    ) { }
 
     ngOnInit() {
-        const editorEle = this.elRef.nativeElement.querySelector('#editor');
+        const editorEle = this.elRef.nativeElement.querySelector("#editor");
 
         this.editor = new Quill(editorEle, {
             modules: {
-                toolbar: true
+                toolbar: true,
             },
-            placeholder: 'Write something beautiful!',
-            theme: 'snow'
+            placeholder: "Write something beautiful!",
+            theme: "snow",
         });
     }
 
@@ -39,8 +40,7 @@ export class EditorComponent implements OnInit, Editor {
 
         let i = index - 1;
         for (; i > 0; i--) {
-
-            if (text[i] === ' ' || text[i] === '\n') {
+            if (text[i] === " " || text[i] === "\n") {
                 // increase the value of i to skip the space or new line
                 i++;
                 break;
@@ -57,7 +57,15 @@ export class EditorComponent implements OnInit, Editor {
         this.editor.insertText(selection.index, char);
     }
 
-    @HostListener('keypress', ['$event'])
+    getText(): string {
+        return this.editor.getText();
+    }
+
+    setText(text: string): void {
+        this.editor.setText(text);
+    }
+
+    @HostListener("keypress", ["$event"])
     onKeyPress(event: KeyboardEvent) {
         this.editorService.onKeyPress.emit(event);
     }
