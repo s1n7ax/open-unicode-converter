@@ -4,6 +4,7 @@ import Converter from './core/converter'
 import SinglishConverterBuilder from './core/converters/singlish/singlish-converter-builder'
 import { EditorComponent } from './editor/editor.component'
 import { MatSnackBar } from '@angular/material'
+import config from '../../app.config.json'
 
 @Component({
     selector: 'app-root',
@@ -14,8 +15,8 @@ export class AppComponent implements OnInit {
     @ViewChild(EditorComponent, null) editorComponent: EditorComponent
     public converting: boolean
     private converter: Converter
-    private typeBlurTimeoutId: ReturnType<typeof setTimeout>
-    private typeBlurTimeout: number = 500
+    private saveDelayTimeoutId: ReturnType<typeof setTimeout>
+    private saveDelayTimeout: number = config.editor.saveDelay
 
     constructor(
         private editorService: EditorService,
@@ -26,7 +27,7 @@ export class AppComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        this.editorService.onKeyDown.subscribe(this.convert.bind(this))
+        this.editorService.onKeyPress.subscribe(this.convert.bind(this))
     }
 
     ngAfterViewInit(): void {
@@ -38,34 +39,31 @@ export class AppComponent implements OnInit {
     }
 
     @HostListener('keydown', ['$event'])
-    switch(event: KeyboardEvent) {
+    onKeyDown(event: KeyboardEvent) {
+        // toggle the converter on and off
         if (event.ctrlKey && event.code === 'Space') {
             event.preventDefault()
             this.converting = !this.converting
         }
 
-        clearTimeout(this.typeBlurTimeoutId)
+        clearTimeout(this.saveDelayTimeoutId)
 
-        this.typeBlurTimeoutId = setTimeout(() => {
+        this.saveDelayTimeoutId = setTimeout(() => {
             const text = this.editorComponent.getText()
 
             localStorage.setItem('text', text)
 
-            this.snackBar.open('saved', null, {
-                duration: 1000,
-                horizontalPosition: 'right',
-            })
-        }, this.typeBlurTimeout)
+            if (config.notification.showSaveNotification) {
+                this.snackBar.open('Saved', null, {
+                    duration: config.notification.notificationTimeout,
+                    horizontalPosition: 'right',
+                })
+            }
+        }, this.saveDelayTimeout)
     }
 
     convert(event: KeyboardEvent): void {
         if (!this.converting) return
-
-        /*
-         * keydown event passes keys like backspace as "Backspace" this is to
-         * try to eliminate those keys being typed literally in the editor
-         */
-        if (event.key.length > 1) return
 
         event.preventDefault()
         const currentWord = this.editorComponent.getCurrentWord()

@@ -1,5 +1,5 @@
 import { Component, ElementRef, HostListener, OnInit } from '@angular/core'
-import Quill, { Key } from 'quill'
+import Quill from 'quill'
 import Editor from './editor'
 import { EditorService } from './editor.service'
 
@@ -67,8 +67,8 @@ export class EditorComponent implements OnInit, Editor {
         this.editor.insertText(0, text)
     }
 
-    @HostListener('keydown', ['$event'])
+    @HostListener('keypress', ['$event'])
     onKeyPress(event: KeyboardEvent) {
-        this.editorService.onKeyDown.emit(event)
+        this.editorService.onKeyPress.emit(event)
     }
 }
