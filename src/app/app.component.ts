@@ -3,6 +3,7 @@ import { EditorService } from "./editor/editor.service";
 import Converter from "./core/converter";
 import SinglishConverterBuilder from "./core/converters/singlish/singlish-converter-builder";
 import { EditorComponent } from "./editor/editor.component";
+import { MatSnackBar } from '@angular/material';
 
 @Component({
     selector: "app-root",
@@ -14,9 +15,9 @@ export class AppComponent implements OnInit {
     public converting: boolean;
     private converter: Converter;
     private typeBlurTimeoutId: ReturnType<typeof setTimeout>;
-    private typeBlurTimeout: number = 2000;
+    private typeBlurTimeout: number = 500;
 
-    constructor(private editorService: EditorService) {
+    constructor(private editorService: EditorService, public snackBar: MatSnackBar) {
         this.converting = true;
         this.converter = new SinglishConverterBuilder().get();
     }
@@ -44,7 +45,13 @@ export class AppComponent implements OnInit {
 
         this.typeBlurTimeoutId = setTimeout(() => {
             const text = this.editorComponent.getText();
+
             localStorage.setItem("text", text);
+
+            this.snackBar.open('saved', null, {
+                duration: 1000,
+                horizontalPosition: 'right',
+            });
         }, this.typeBlurTimeout);
     }
 
