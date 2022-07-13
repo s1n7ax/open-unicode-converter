@@ -14,7 +14,7 @@ export class AppComponent implements OnInit {
     public converting: boolean;
     private converter: Converter;
     private typeBlurTimeoutId: ReturnType<typeof setTimeout>;
-    private typeBlurTimeout: number;
+    private typeBlurTimeout: number = 2000;
 
     constructor(private editorService: EditorService) {
         this.converting = true;
