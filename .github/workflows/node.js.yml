@@ -34,7 +34,7 @@ jobs:
       run: |
         TEMP_DIR=$(mktemp -d)
         mv "./CNAME" "$TEMP_DIR"
-        mv "./dist/open-unicode-converter" "$TEMP_DIR"
+        mv "./dist/open-unicode-converter/*" "$TEMP_DIR"
         git switch -c "gh-pages"
         git fetch
         git reset --hard origin/gh-pages
