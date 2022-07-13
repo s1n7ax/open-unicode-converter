@@ -81,6 +81,7 @@ describe('Singlish Converter', () => {
 
             expect('ණ්').toEqual(converter.convert('N').result);
             expect('ඬ්').toEqual(converter.convert('d', 'න්න්').result);
+            expect('ඟ්').toEqual(converter.convert('g', 'න්න්').result);
 
             expect('ත්').toEqual(converter.convert('h', 'ට්').result);
             expect('ථ්').toEqual(converter.convert('h', 'ඨ්').result);
