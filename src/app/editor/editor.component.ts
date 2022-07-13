@@ -26,6 +26,8 @@ export class EditorComponent implements OnInit, Editor {
             placeholder: "Write something beautiful!",
             theme: "snow",
         });
+
+        this.editor.focus();
     }
 
     backspace(no: number): void {
