@@ -38,7 +38,7 @@ jobs:
         git fetch
         git reset --hard origin/gh-pages
         rm -rf *
-        mv "$TEMP_DIR/dist/"* .
+        mv "$TEMP_DIR/dist/open-unicode-converter/"* .
         git config user.email "srineshnisala@gmail.com"
         git config user.name "s1n7ax"
         git add .
