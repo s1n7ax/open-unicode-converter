@@ -33,12 +33,13 @@ jobs:
       shell: bash
       run: |
         TEMP_DIR=$(mktemp -d)
-        mv "./dist" "$TEMP_DIR"
+        mv "./CNAME" "$TEMP_DIR"
+        mv "./dist/open-unicode-converter" "$TEMP_DIR"
         git switch -c "gh-pages"
         git fetch
         git reset --hard origin/gh-pages
         rm -rf *
-        mv "$TEMP_DIR/dist/open-unicode-converter/"* .
+        mv "$TEMP_DIR/dist/"* .
         git config user.email "srineshnisala@gmail.com"
         git config user.name "s1n7ax"
         git add .
