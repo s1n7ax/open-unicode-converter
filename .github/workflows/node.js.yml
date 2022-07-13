@@ -13,7 +13,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [12.x, 14.x, 16.x]
+        node-version: [18.x]
 
     steps:
     - uses: actions/checkout@v3
@@ -22,10 +22,10 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
-        cache: 'npm'
+        cache: 'yarn'
         
-    - run: npm ci
-    - run: npm run build --prod
+    - run: yarn ci
+    - run: yarn run build --prod
     
     - name: Publish to github pages
       shell: bash
