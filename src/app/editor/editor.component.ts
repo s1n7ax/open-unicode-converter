@@ -27,6 +27,7 @@ export class EditorComponent implements OnInit, Editor {
             theme: "snow",
         });
 
+        this.editor.getSelection();
         this.editor.focus();
     }
 
@@ -60,11 +61,12 @@ export class EditorComponent implements OnInit, Editor {
     }
 
     getText(): string {
-        return this.editor.getText();
+        // getText returns additional newline at the end so slice it out
+        return this.editor.getText().slice(0, -1);
     }
 
     setText(text: string): void {
-        this.editor.setText(text);
+        this.editor.insertText(0, text);
     }
 
     @HostListener("keypress", ["$event"])
