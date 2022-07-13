@@ -1,0 +1,45 @@
+name: Node.js CI
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [12.x, 14.x, 16.x]
+
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+        
+    - run: npm ci
+    - run: npm run build --prod
+    
+    - name: Publish to github pages
+      shell: bash
+      run: |
+        TEMP_DIR=$(mktemp -d)
+        mv "./dist" "$TEMP_DIR"
+        git switch -c "gh-pages"
+        git fetch
+        git reset --hard origin/gh-pages
+        rm -rf *
+        mv "$TEMP_DIR/dist/"* .
+        git config user.email "srineshnisala@gmail.com"
+        git config user.name "s1n7ax"
+        git add .
+        git commit -m "chore: published at $(date)"
+        git pull -r origin "gh-pages"
+        git push origin "gh-pages"
