@@ -1,9 +1,0 @@
-{
-    "editor": {
-        "saveDelay": 500
-    },
-    "notification": {
-        "showSaveNotification": true,
-        "notificationTimeout": 1000
-    }
-}

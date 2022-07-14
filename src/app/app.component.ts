@@ -4,7 +4,7 @@ import Converter from './core/converter'
 import SinglishConverterBuilder from './core/converters/singlish/singlish-converter-builder'
 import { EditorComponent } from './editor/editor.component'
 import { MatSnackBar } from '@angular/material'
-import config from '../../app.config.json'
+import config from '../../config'
 
 @Component({
     selector: 'app-root',
@@ -28,6 +28,19 @@ export class AppComponent implements OnInit {
 
     ngOnInit(): void {
         this.editorService.onKeyPress.subscribe(this.convert.bind(this))
+        this.editorService.onKeyDown.subscribe(this.converterToggle.bind(this))
+
+        if (config.editor.autoSave) {
+            if (config.editor.saveMethod === 'on_change') {
+                this.editorService.onKeyDown.subscribe(
+                    this.onChangeSave.bind(this)
+                )
+            } else if (config.editor.saveMethod === 'on_blur') {
+                this.editorService.onKeyDown.subscribe(
+                    this.onBlurSave.bind(this)
+                )
+            }
+        }
     }
 
     ngAfterViewInit(): void {
@@ -38,14 +51,19 @@ export class AppComponent implements OnInit {
         }
     }
 
-    @HostListener('keydown', ['$event'])
-    onKeyDown(event: KeyboardEvent) {
-        // toggle the converter on and off
+    converterToggle(event: KeyboardEvent) {
         if (event.ctrlKey && event.code === 'Space') {
             event.preventDefault()
             this.converting = !this.converting
         }
+    }
 
+    onChangeSave() {
+        const text = this.editorComponent.getText()
+        localStorage.setItem('text', text)
+    }
+
+    onBlurSave() {
         clearTimeout(this.saveDelayTimeoutId)
 
         this.saveDelayTimeoutId = setTimeout(() => {

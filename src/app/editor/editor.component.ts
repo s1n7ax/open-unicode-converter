@@ -67,6 +67,11 @@ export class EditorComponent implements OnInit, Editor {
         this.editor.insertText(0, text)
     }
 
+    @HostListener('keydown', ['$event'])
+    onKeyDown(event: KeyboardEvent) {
+        this.editorService.onKeyDown.emit(event)
+    }
+
     @HostListener('keypress', ['$event'])
     onKeyPress(event: KeyboardEvent) {
         this.editorService.onKeyPress.emit(event)
