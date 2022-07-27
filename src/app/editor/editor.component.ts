@@ -19,6 +19,10 @@ export class EditorComponent implements OnInit, Editor {
     ngOnInit() {
         const editorEle = this.elRef.nativeElement.querySelector('#editor')
 
+        var Block = Quill.import('blots/block')
+        Block.tagName = 'DIV'
+        Quill.register(Block, true)
+
         this.editor = new Quill(editorEle, {
             modules: {
                 toolbar: true,
